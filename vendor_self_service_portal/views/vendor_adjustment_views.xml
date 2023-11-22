@@ -5,13 +5,47 @@
         <field name="model">vendor.adjustment.request</field>
         <field name="arch" type="xml">
             <form>
+                <sheet>
                 <group>
                     <field name="order_id"/>
                     <field name="adjustment_detail"/>
                     <field name="comment"/>
                 </group>
+                </sheet>
             </form>
         </field>
     </record>
+
+    <record id="view_vendor_adjustment_tree" model="ir.ui.view">
+        <field name="name">vendor.adjustment.tree</field>
+        <field name="model">vendor.adjustment.request</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="order_id"/>
+                <field name="adjustment_detail"/>
+                <field name="comment"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="vendor_adjustment_action" model="ir.actions.act_window">
+        <field name="name">Vendor Adjustment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">vendor.adjustment.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new Adjustment
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+            id="vendor_self_portal_menu_request"
+            name="Vendor Adjustment Request"
+            parent="vendor_self_portal_menu_operation"
+            action="vendor_adjustment_action"
+            groups="base.group_user"
+            sequence="10"/>
 
 </odoo>

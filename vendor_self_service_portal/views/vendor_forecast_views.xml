@@ -12,6 +12,22 @@
             </tree>
         </field>
     </record>
+    <record id="vendor_forecast_view_form" model="ir.ui.view">
+        <field name="name">vendor.forecast.view.form</field>
+        <field name="model">vendor.forecast</field>
+        <field name="priority">4</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="expected_quantity"/>
+                        <field name="forecast_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
     <record id="vendor_forecast_action" model="ir.actions.act_window">
         <field name="name">Vendor Forecast</field>
         <field name="type">ir.actions.act_window</field>
@@ -24,9 +40,9 @@
         </field>
     </record>
     <menuitem
-            id="vendor_self_portal_menu_request"
-            name="Vendor Adjustment Request"
-            parent="vendor_self_portal_menu_operation"
+            id="vendor_self_portal_menu_operation"
+            name="Vendor"
+            parent="vendor_self_portal_menu_root"
             action="vendor_forecast_action"
             groups="base.group_user"
             sequence="10"/>

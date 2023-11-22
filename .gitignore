@@ -1,0 +1,7 @@
+# Ignore compiled files
+*.pyc
+*.class
+
+# Ignore local configuration files
+/.env
+/.vscode

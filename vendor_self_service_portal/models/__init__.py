@@ -4,5 +4,5 @@
 #############################################################################
 
 from . import vendor_adjustment
-from . import vendore_forecast
+from . import vendor_forecast
 

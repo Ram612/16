@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_vendor_forecast_list" model="ir.ui.view">
-        <field name="name">vendor.forecast.list</field>
+    <record id="vendor_forecast_view_tree" model="ir.ui.view">
+        <field name="name">vendor.forecast.view.tree</field>
         <field name="model">vendor.forecast</field>
+        <field name="priority">4</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="product_id"/>
@@ -11,4 +12,22 @@
             </tree>
         </field>
     </record>
+    <record id="vendor_forecast_action" model="ir.actions.act_window">
+        <field name="name">Vendor Forecast</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">vendor.forecast</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new Forecast
+            </p>
+        </field>
+    </record>
+    <menuitem
+            id="vendor_self_portal_menu_request"
+            name="Vendor Adjustment Request"
+            parent="vendor_self_portal_menu_operation"
+            action="vendor_forecast_action"
+            groups="base.group_user"
+            sequence="10"/>
 </odoo>

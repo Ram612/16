@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!--    Vendor Self portal Menus-->
+        <menuitem
+                id="vendor_self_portal_menu_root"
+                name="Vendor Self Portal"
+                groups="base.group_user"
+                web_icon="vendor_self_service_portal,static/description/icon.jpg"
+                sequence="10"/>
+        <menuitem
+                id="vendor_self_portal_menu_operation"
+                name="Vendor"
+                parent="vendor_self_portal_menu_root"
+                groups="base.group_user"
+                sequence="10"/>
+
+    </data>
+</odoo>

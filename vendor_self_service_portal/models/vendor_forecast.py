@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
-#############################################################################
-#    Author: Ramkumar (ram612fullstack@gmail.com)
-#############################################################################
+# models/vendor_forecast.py
 
-from odoo import models, fields
-
+from odoo import fields, models
 
 class VendorForecast(models.Model):
     _name = 'vendor.forecast'
